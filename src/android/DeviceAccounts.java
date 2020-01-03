@@ -108,6 +108,7 @@ public class DeviceAccounts extends CordovaPlugin {
   public void onActivityResult(int requestCode, int resultCode, Intent intent) {
     if(requestCode == VISIBILITY_VISIBLE && resultCode == RESULT_OK) {
       this.callbackContext.success("SUCCESS");
+      return String accountName = intent.getStringExtra(AccountManager.KEY_ACCOUNT_NAME);
     } else {
       this.callbackContext.error("Error Getting Permissions, Code: " + resultCode);
     }
